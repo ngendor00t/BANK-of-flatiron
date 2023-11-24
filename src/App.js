@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Tabletransactions from './components/Tabletransactions';
 import Search from './components/Search';
+import Header from './components/Header';
 
  
 
@@ -14,7 +15,7 @@ function App() {
   const [searchTerm , setSearchTerm]= useState('');
 
   useEffect(() => {
-fetch("http://localhost:3000/transactions")
+fetch("https://my-json-server.typicode.com/ngendor00t/bank-of-flatiron")
 .then ((response) => response.json())
 .then ((data)=> {
   console.log (data);
@@ -48,6 +49,7 @@ function deleteTransaction(id) {
 //rendering some key components
 return (
   <>
+    <Header />
     <Search onSearch={setSearchTerm} />
     <Tabletransactions transactions={filteredTransactions} onDelete={deleteTransaction} />
     
