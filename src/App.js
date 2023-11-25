@@ -15,7 +15,7 @@ function App() {
   const [searchTerm , setSearchTerm]= useState('');
 
   useEffect(() => {
-fetch("https://my-json-server.typicode.com/ngendor00t/bank-of-flatiron")
+fetch("https://my-json-server.typicode.com/ngendor00t/bank-of-flatiron/transactions")
 .then ((response) => response.json())
 .then ((data)=> {
   console.log (data);
